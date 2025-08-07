@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nihon.Br</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
+
+        * {
+            padding: 0;
+            margin: 0;
+            border: 0;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            animation: changeBackgroundImage 15s infinite;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            overflow-x: hidden;
+        }
+
+        @keyframes changeBackgroundImage {
+            0% {
+                background-image: url(wallhaven-r2z8vq_3840x2160.png);
+            }
+            25% {
+                background-image: url(wallhaven-r7mgm7.jpg);
+            }
+            50% {
+                background-image: url(wallhaven-47dw3y.jpg);
+            }
+            75% {
+                background-image: url(wallhaven-8x73xk.jpg);
+            }
+            100% {
+                background-image: url(wallhaven-r2z8vq_3840x2160.png);
+            }
+        }
+
+        :root {
+            --rubik: 'Rubik', sans-serif;
+        }
+
+        #menu {
+            padding: 30px;
+        }
+
+        .ul-menu > .li-menu, #li-icon {
+            display: inline-block;
+        }
+
+        #li-icon {
+            list-style: none;
+        }
+
+        .li-menu {
+            list-style: none;
+            display: inline-block;
+            padding-left: 20px;
+        }
+
+        #icon-menu {
+            width: 60px;
+            height: 60px;
+            padding-left: 25px;
+            padding-right: 700px;
+        }
+
+        .li-menu a {
+            text-decoration: none;
+            color: white;
+            font-family: var(--rubik);
+            font-size: 20px;
+        }
+
+        .li-menu a:hover {
+            border-bottom: solid 3px #FF1500;
+        }
+
+        #texto-japao {
+            position: fixed;
+            top: 30%;
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: 80%;
+            color: white;
+            font-family: var(--rubik);
+            text-align: center;
+            transition: opacity 0.2s ease-in-out;
+            z-index: 10;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+        }
+
+        #texto-japao h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        #texto-japao p {
+            font-size: 1.2rem;
+        }
+
+        .button-bg {
+            margin-top: 800px; /* apenas para criar espaço para rolar */
+        }
+    </style>
+</head>
+<body>
+    <!-- menu -->
+    <nav id="menu">
+        <ul id="ul-menu" class="ul-menu">
+            <li id="li-icon"><a href="index.html"><img id="icon-menu" src="japan (1).png" alt="Ícone Japão"></a></li>
+            <li class="li-menu"><a href="curiosidades.html">Curiosidades</a></li>
+            <li class="li-menu"><a href="lugares.html">Lugares</a></li>
+            <li class="li-menu"><a href="animes.html">Animes</a></li>
+        </ul>
+    </nav>
+    <!-- menu -->
+
+    <!-- Texto com efeito -->
+    <div id="texto-japao">
+        <h1>“O Japão é onde a tradição milenar encontra a inovação do futuro.”</h1>
+        <p>Das ruas iluminadas de Tóquio aos templos silenciosos de Kyoto, cada canto do Japão conta uma história única de equilíbrio, beleza e respeito.</p>
+    </div>
+
+    <!-- Apenas para gerar espaço e testar o scroll -->
+    <input class="button-bg" type="button" value="">
+
+    <!-- Script de fade out -->
+    <script>
+        window.addEventListener('scroll', () => {
+            const text = document.getElementById('texto-japao');
+            const scrollY = window.scrollY;
+            const maxScroll = 300; // altura até sumir
+            const opacity = Math.max(0, 1 - scrollY / maxScroll);
+            text.style.opacity = opacity;
+        });
+    </script>
+</body>
+</html>
